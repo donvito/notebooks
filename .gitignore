@@ -1,0 +1,57 @@
+# macOS metadata
+.DS_Store
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.cache/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Local environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Packaging and build output
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Tests, coverage, and type-checker caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.pyright/
+.ruff_cache/
+
+# Local IDE settings
+.idea/
+.vscode/
+
+# Common local ML experiment output
+wandb/
+runs/
+lightning_logs/
+
+# Downloaded model weights
+*.ckpt
+*.gguf
+*.onnx
+*.pt
+*.pth
+*.safetensors
