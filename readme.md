@@ -4,6 +4,7 @@
 | --- | --- | --- |
 | [LFM2.5-2.6B](colab/LFM-2_5-2_6b-llamacpp-python.ipynb) | GPU inference, benchmarking, and multi-tool use with `llama-cpp-python`. | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/donvito/notebooks/blob/main/colab/LFM-2_5-2_6b-llamacpp-python.ipynb) |
 | [ModernBERT classifier](colab/ModernBERT_train_classify.ipynb) | Fine-tune `answerdotai/ModernBERT-base` as a tiny binary classifier for `luna` vs `astra` task routing. | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/donvito/notebooks/blob/main/colab/ModernBERT_train_classify.ipynb) |
+| [Gemma 4 E2B tweet style](colab/gemma4_e2b_tweet_style_colab.ipynb) | QLoRA fine-tune `Gemma 4 E2B Instruct` with Unsloth on your popular tweets to generate posts in your writing style. | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/donvito/notebooks/blob/main/colab/gemma4_e2b_tweet_style_colab.ipynb) |
 
 ## AIBackends
 
