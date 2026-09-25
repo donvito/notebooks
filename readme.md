@@ -6,6 +6,7 @@
 | [ModernBERT classifier](colab/ModernBERT_train_classify.ipynb) | Fine-tune `answerdotai/ModernBERT-base` as a tiny binary classifier for `luna` vs `astra` task routing. | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/donvito/notebooks/blob/main/colab/ModernBERT_train_classify.ipynb) |
 | [Gemma 4 E2B tweet style](colab/gemma4_e2b_tweet_style_colab.ipynb) | QLoRA fine-tune `Gemma 4 E2B Instruct` with Unsloth on your popular tweets to generate posts in your writing style. | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/donvito/notebooks/blob/main/colab/gemma4_e2b_tweet_style_colab.ipynb) |
 | [Gemma 4 E2B model router](colab/gemma4_e2b_model_router.ipynb) | QLoRA fine-tune `Gemma 4 E2B Instruct` with Unsloth to route software tasks to `luna` or `astra`. | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/donvito/notebooks/blob/main/colab/gemma4_e2b_model_router.ipynb) |
+| [GLiNER2.5-Decide](colab/GLiNER2_5-Decide-classification.ipynb) | Zero-shot intent, routing, sentiment, moderation, severity, multi-head, and ordinal decisions with `fastino/GLiNER2.5-Decide` on CPU/GPU. | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/donvito/notebooks/blob/main/colab/GLiNER2_5-Decide-classification.ipynb) |
 
 ## AIBackends
 
