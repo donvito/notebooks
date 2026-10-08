@@ -1,0 +1,46 @@
+{
+  "seed": 3407,
+  "generator": "generate.py",
+  "files": {
+    "train.jsonl": {
+      "rows": 1600,
+      "sha256": "7b1d86a2d217a93bc019e70ebab41bb3968cb9906eefb36e9a156a8f915a3553",
+      "category": {
+        "account_access": 200,
+        "billing": 200,
+        "cancellation": 200,
+        "feature_request": 200,
+        "refund_request": 200,
+        "shipping_delivery": 200,
+        "spam_or_other": 200,
+        "technical_issue": 200
+      },
+      "priority": {
+        "0": 547,
+        "1": 692,
+        "2": 361
+      },
+      "ambiguous": 217
+    },
+    "test.jsonl": {
+      "rows": 400,
+      "sha256": "2bbadbbfb700a828083284acd0c90677b63c155ec81de83bab18175415c9e8f0",
+      "category": {
+        "account_access": 50,
+        "billing": 50,
+        "cancellation": 50,
+        "feature_request": 50,
+        "refund_request": 50,
+        "shipping_delivery": 50,
+        "spam_or_other": 50,
+        "technical_issue": 50
+      },
+      "priority": {
+        "0": 140,
+        "1": 164,
+        "2": 96
+      },
+      "ambiguous": 51
+    }
+  }
+}
