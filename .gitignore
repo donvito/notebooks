@@ -10,6 +10,7 @@ __pycache__/
 # Jupyter notebooks
 .ipynb_checkpoints/
 *.nbconvert.ipynb
+indra_samples/
 
 # Virtual environments
 .venv/
