@@ -1,5 +1,7 @@
 # Colab Notebooks
 
+Tweet + Hub sources: see [tweet-sources.md](tweet-sources.md).
+
 | Notebook | Description | Open&nbsp;in&nbsp;Google&nbsp;Colab |
 | --- | --- | --- |
 | [LFM3-1.7B chat and tools](colab/LFM3-1.7B-chat-tools.ipynb) | Text chat, thinking, and a mock tool-calling loop with [`LiquidAI/LFM3-1.7B`](https://huggingface.co/LiquidAI/LFM3-1.7B) (~1.73B, LFM Open License v1.0). **Free T4**, float16 + SDPA, `trust_remote_code`. About 3.5 GB of weights. Native Transformers LFM3 support is still landing (`transformers#50036`). [Model card](https://huggingface.co/LiquidAI/LFM3-1.7B) · [blog](https://www.liquid.ai/blog/lfm3) · [announcement](https://x.com/liquidai/status/2115128329003303107) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/donvito/notebooks/blob/main/colab/LFM3-1.7B-chat-tools.ipynb) |
