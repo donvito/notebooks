@@ -15,6 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
+| [pplx-embed-v2-context-0.6b-contextual-rag.ipynb](colab/pplx-embed-v2-context-0.6b-contextual-rag.ipynb) | pplx-embed-v2-context-0.6b | https://huggingface.co/perplexity-ai/pplx-embed-v2-context-0.6b | https://x.com/tomaarsen/status/2117618555210641590 | — | 2026-11-05 |
 | [NorthCUA-Nano-computer-use-agent.ipynb](colab/NorthCUA-Nano-computer-use-agent.ipynb) | NorthCUA-Nano | https://huggingface.co/beipo-ai/NorthCUA-Nano | https://x.com/PtVHVQ2FPQ51994/status/2117229952231702676 | [#51](https://github.com/donvito/notebooks/pull/51) | 2026-11-04 03:05 |
 | [NetraV4-medical-vqa.ipynb](colab/NetraV4-medical-vqa.ipynb) | NetraV4 | https://huggingface.co/dipankar500/NetraV4 | https://x.com/VaidenceAI/status/2117133765973840126 | [#50](https://github.com/donvito/notebooks/pull/50) | 2026-11-03 03:03 |
 | [Silencio-2-tts-voice-clone.ipynb](colab/Silencio-2-tts-voice-clone.ipynb) | Silencio-2 | https://huggingface.co/BlueRoseLabs/Silencio-2 | https://x.com/julian_inada/status/2116987775467835840 | [#49](https://github.com/donvito/notebooks/pull/49) | 2026-11-03 02:59 |
