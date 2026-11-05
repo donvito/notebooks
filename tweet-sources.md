@@ -15,6 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
+| [IOTA-Decide-4B-typed-decisions.ipynb](colab/IOTA-Decide-4B-typed-decisions.ipynb) | IOTA Decide 4B v0.4 | https://huggingface.co/macrocosm-os/iota-decide-4b-v0.4 | https://x.com/MacrocosmosAI/status/2118028289813971098 | — (PR open) | 2026-11-06 |
 | [pplx-embed-v2-context-0.6b-contextual-rag.ipynb](colab/pplx-embed-v2-context-0.6b-contextual-rag.ipynb) | pplx-embed-v2-context-0.6b | https://huggingface.co/perplexity-ai/pplx-embed-v2-context-0.6b | https://x.com/tomaarsen/status/2117618555210641590 | [#52](https://github.com/donvito/notebooks/pull/52) | 2026-11-05 |
 | [Audio8-TTS-Realistic-Air-voice-clone.ipynb](colab/Audio8-TTS-Realistic-Air-voice-clone.ipynb) | Audio8-TTS-Realistic-Air | https://huggingface.co/Edge0/Audio8-TTS-Realistic-Air | https://x.com/SamuelZengML/status/2115881504102551856 | [#53](https://github.com/donvito/notebooks/pull/53) | 2026-11-05 |
 | [NorthCUA-Nano-computer-use-agent.ipynb](colab/NorthCUA-Nano-computer-use-agent.ipynb) | NorthCUA-Nano | https://huggingface.co/beipo-ai/NorthCUA-Nano | https://x.com/PtVHVQ2FPQ51994/status/2117229952231702676 | [#51](https://github.com/donvito/notebooks/pull/51) | 2026-11-04 03:05 |
