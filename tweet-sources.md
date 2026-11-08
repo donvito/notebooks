@@ -15,7 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
-| [Qwenx86-4B-compact-in-weight-cpu.ipynb](colab/Qwenx86-4B-compact-in-weight-cpu.ipynb) | Qwenx86-4B compact | https://huggingface.co/Quazim0t0/Qwenx86-4B-compact | https://x.com/TeksEdge/status/2118857211992854892 | TBD | 2026-11-09 |
+| [Qwenx86-4B-compact-in-weight-cpu.ipynb](colab/Qwenx86-4B-compact-in-weight-cpu.ipynb) | Qwenx86-4B compact | https://huggingface.co/Quazim0t0/Qwenx86-4B-compact | https://x.com/TeksEdge/status/2118857211992854892 | [#58](https://github.com/donvito/notebooks/pull/58) | 2026-11-09 |
 | [IOTA-Decide-4B-typed-decisions.ipynb](colab/IOTA-Decide-4B-typed-decisions.ipynb) | IOTA Decide 4B v0.4 | https://huggingface.co/macrocosm-os/iota-decide-4b-v0.4 | https://x.com/MacrocosmosAI/status/2118028289813971098 | [#56](https://github.com/donvito/notebooks/pull/56) | 2026-11-06 |
 | [HaloGuard2-Stream-0.8B-streaming-output-guard.ipynb](colab/HaloGuard2-Stream-0.8B-streaming-output-guard.ipynb) | HaloGuard 2.0-Stream-0.8B | https://huggingface.co/astroware/HaloGuard2-Stream-0.8B | https://x.com/xnavkum/status/2118010382992457822 | [#55](https://github.com/donvito/notebooks/pull/55) | 2026-11-06 |
 | [pplx-embed-v2-context-0.6b-contextual-rag.ipynb](colab/pplx-embed-v2-context-0.6b-contextual-rag.ipynb) | pplx-embed-v2-context-0.6b | https://huggingface.co/perplexity-ai/pplx-embed-v2-context-0.6b | https://x.com/tomaarsen/status/2117618555210641590 | [#52](https://github.com/donvito/notebooks/pull/52) | 2026-11-05 |
