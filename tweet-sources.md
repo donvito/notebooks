@@ -15,6 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
+| [ARLoop-1.2B-looped-transformer.ipynb](colab/ARLoop-1.2B-looped-transformer.ipynb) | ARLoop-1.2B | https://huggingface.co/osunlp/ARLoop-1.2B | https://x.com/yuekun_yao/status/2119982422259622086 | [#69](https://github.com/donvito/notebooks/pull/69) | 2026-11-11 03:03 |
 | [tropa-voice-mini-ai-voice-detector.ipynb](colab/tropa-voice-mini-ai-voice-detector.ipynb) | tropa-voice-mini | https://huggingface.co/wasitaigeneratedcom/ai-voice-detector-small | https://x.com/wiagenerated/status/2119776813237096523 | [#68](https://github.com/donvito/notebooks/pull/68) | 2026-11-10 03:06 |
 | [Spark-X2.6-1.7B-on-device-agent.ipynb](colab/Spark-X2.6-1.7B-on-device-agent.ipynb) | Spark-X2.6-1.7B | https://huggingface.co/XHToken/Spark-X2.6-1.7B | https://x.com/SparkLLM/status/2115100695775056057 | [#60](https://github.com/donvito/notebooks/pull/60) | 2026-11-09 |
 | [Qwenx86-4B-compact-in-weight-cpu.ipynb](colab/Qwenx86-4B-compact-in-weight-cpu.ipynb) | Qwenx86-4B compact | https://huggingface.co/Quazim0t0/Qwenx86-4B-compact | https://x.com/TeksEdge/status/2118857211992854892 | [#58](https://github.com/donvito/notebooks/pull/58) | 2026-11-09 |
