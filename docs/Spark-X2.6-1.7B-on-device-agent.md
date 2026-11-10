@@ -14,7 +14,7 @@ Spark-X2.6-1.7B is SparkLLM's compact on-device agent: about 1.71 billion parame
 
 - **Vision, audio, or OCR.** This checkpoint is text-only. Use a VL or ASR notebook in this repo for screenshots, speech, or page images.
 - **Hard software-engineering work where you already have VRAM for the 4B.** The announcement's gaps are small (3.0 SWE Verified, 1.6 τ²-bench) but they favor the 4B. If float16 or 4-bit 4B fits, prefer [Spark-X2.6-4B](../colab/Spark-X2.6-4B-on-device-agent.ipynb).
-- **The card's 1,048,576-token context on a free T4.** Native context is one million tokens; a 16 GB T4 cannot hold that KV cache. This notebook caps new tokens in the low hundreds.
+- **The card's 1,048,576-token context on a free T4.** Native context is one million tokens; a 16 GB T4 cannot hold that KV cache. This notebook caps new tokens around 1k.
 - **Runtimes that cannot execute Hub custom code.** Loading runs `modeling_spark.py` / `configuration_spark.py` with `trust_remote_code=True`. That is required; there is no stock Transformers class for `spark2_5` on the pinned 4.57.1 wheel.
 - **A drop-in replacement for a 7B+ dedicated coder.** Team numbers are strong for the size. They are not a claim that 1.7B matches a much larger coding model on long, multi-file jobs.
 
@@ -52,7 +52,7 @@ A free Colab T4 has about 15 GB of VRAM, no native bfloat16, and no FlashAttenti
 
 Weights are about 1.71B × 2 bytes ≈ **3.5 GB**. After load you should see a few GB allocated, with short demos well under 15 GB. Unlike the 4B notebook, there is no bitsandbytes 4-bit fallback: float16 fits.
 
-Sampling follows the card's Transformers snippet: `do_sample=True`, `temperature=1.0`, `top_p=0.95`, `top_k=0`. The saved `generation_config.json` has `top_k: -1`, which Transformers rejects, so the helper always passes `top_k=0`. The card's `max_new_tokens=131072` is not used.
+Sampling follows the card's Transformers snippet and `generation_config.json`: `do_sample=True`, `temperature=1.0`, `top_p=0.95`, `top_k=0`, `repetition_penalty=1.0`. The saved config has `top_k: -1`, which Transformers rejects, so the helper always passes `top_k=0`. The card's `max_new_tokens=131072` is not used.
 
 Install is `transformers==4.57.1` and `accelerate`. The notebook tries to drop a pre-imported Colab `transformers` so **Runtime > Run all** can pick up the pin without Restart session. If the version assert still fails, restart once and continue from the GPU cell.
 
@@ -61,24 +61,26 @@ Install is `transformers==4.57.1` and `accelerate`. The notebook tries to drop a
 1. **GPU check.** Prints `torch.cuda.is_available()`, the device name, and free VRAM. It imports torch only, so the later pin can take effect. On a T4 it selects float16.
 2. **Install.** Pins `transformers==4.57.1`. Does not install bitsandbytes. Does not reinstall torch.
 3. **Load.** `AutoModelForCausalLM.from_pretrained(..., trust_remote_code=True, torch_dtype=float16, device_map="auto")`. Look for about 1.71B parameters and roughly 3.5–5 GB allocated.
-4. **Think-then-answer.** Asks how big 1.7B is in float16 versus the 4B, with `enable_thinking=True` and `reasoning_effort="high"` (the card / SGLang default, and the setting used for the posted SWE / τ² numbers). The cell splits `<think>` from the answer. Expect a short arithmetic argument (1.71B × 2 bytes ≈ 3.4 GB, fits 16 GB; 4B is about 8.2 GB). The generate cap is 512 new tokens, not the card's 131072.
+4. **Think-then-answer.** Asks how big 1.7B is in float16 versus the 4B, with `enable_thinking=True` and `reasoning_effort="low"`. The card / SGLang default is **high** (the setting used for the posted SWE / τ² numbers); this T4 demo uses **low** because the card reports high→low as 37.3% shorter on the 1.7B, which leaves room to close `</think>` and still write the response channel. Sampling matches the card (`temperature=1.0`, `top_p=0.95`, `top_k=0`, `repetition_penalty=1.0`). The cell splits the think channel from the answer the way the Jinja template and SGLang's `--reasoning-parser qwen3` do: new tokens are think until `</think>`, then the answer. If the think channel never closes, the helper appends `</think>` and generates the answer rather than printing truncated reasoning as the answer. Expect a short arithmetic argument (1.71B × 2 bytes ≈ 3.4 GB, fits 16 GB; 4B is about 8.2 GB). The generate cap is 1024 new tokens, not the card's 131072.
 5. **Coding task.** Asks for a `parse_kv` helper with thinking off and temperature 0.4 (a demo choice; the card sample uses 1.0). The following cell writes the source to a temp file, rejects a short list of dangerous imports, and runs four assertions. Look for `all tests passed`.
-6. **Tool-use loop.** Offers `get_weather` and `get_local_time` stubs. The first generate should contain `<tool_call>` blocks; the notebook executes the stubs and asks for a two-sentence recommendation. A text-only answer with no tool block is a miss, not a crash.
+6. **Tool-use loop.** Offers `get_weather` and `get_local_time` stubs. `get_local_time` returns ISO, a 24-hour `local_24h`, and a `time_of_day` label (morning / afternoon / evening / night) so the final answer can match the tool instead of guessing from the prompt. The user prompt asks the model to state those returned fields. The first generate should contain `<tool_call>` blocks; the notebook executes the stubs and asks for a two-sentence recommendation. A text-only answer with no tool block is a miss, not a crash.
 7. **Cleanup.** Deletes the model and empties the CUDA cache so you can load something else on the same T4.
 
 ## Prompting, sampling, and thinking
 
-Use `tokenizer.apply_chat_template` with `add_generation_prompt=True`. Pass `enable_thinking` and, when thinking is on, `reasoning_effort` of `"high"` or `"low"`. The Jinja default is thinking **on** and effort **high**. Pass `enable_thinking=False` when you want the model to spend tokens on a function or a tool call instead of a trace.
+Use `tokenizer.apply_chat_template` with `add_generation_prompt=True`. Pass `enable_thinking` and, when thinking is on, `reasoning_effort` of `"high"` or `"low"`. The Jinja default is thinking **on** and effort **high**. This notebook's think demo uses `"low"` on a T4. Pass `enable_thinking=False` when you want the model to spend tokens on a function or a tool call instead of a trace.
+
+When thinking is on, the template prepends `<think>` to the generation prompt. Decode the new tokens and split on `</think>`: before is the think channel, after is the response channel (same split as SGLang `--reasoning-parser qwen3`). `<think>` and `</think>` are added tokens with `special=false`, so `skip_special_tokens=True` keeps them. If `</think>` never appears, the whole generation is still think, not the answer.
 
 The template renders tools as `<tools>…</tools>` and expects calls of the form `<tool_call>name<arg_key>…</arg_key><arg_value>…</arg_value></tool_call>`. Assistant turns can carry `reasoning_content` and `tool_calls` with **dict** arguments (not JSON strings). Tool results use role `"tool"`.
 
-Card sampling: temperature 1.0, top_p 0.95, top_k 0, `do_sample=True`. Keep `max_new_tokens` in the low hundreds on a T4.
+Card sampling: temperature 1.0, top_p 0.95, top_k 0, repetition_penalty 1.0, `do_sample=True`. Keep `max_new_tokens` around 1k or below on a T4.
 
 ## Limitations and gotchas
 
 - Custom code from the Hub runs at load time. Read `modeling_spark.py` before you ship this path.
 - Colab's default transformers is newer than 4.57.1. Do not bump the pin unless the card changes.
-- High thinking can fill the 512-token cap on the think demo; the answer may truncate. Raise `max_new_tokens` only if free VRAM still looks comfortable.
+- High thinking on this 1.7B can fill a small token cap before `</think>`, which makes a naive split print “(no think channel)” and treat truncated reasoning as the answer. The think demo uses `reasoning_effort="low"` and 1024 new tokens; if the channel still does not close, the helper appends `</think>` and generates the response. Raise `max_new_tokens` further only if free VRAM still looks comfortable.
 - The modeling file implements eager attention. FlashAttention 2 is not on this path.
 - Optional GGUF lives at [`XHToken/Spark-X2.6-1.7B-GGUF`](https://huggingface.co/XHToken/Spark-X2.6-1.7B-GGUF) (`Q4_K_M` about 1.8 GB). llama.cpp needs `b10828` or later for `spark2_5`. Unload the Transformers model before you download a GGUF on a 16 GB card.
 - `HF_TOKEN` is optional. The weights are public.
