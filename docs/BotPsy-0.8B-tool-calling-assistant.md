@@ -18,7 +18,7 @@
 
 ## Running it on a free Colab T4
 
-Pick a T4 GPU (*Runtime > Change runtime type > T4 GPU*). The card example loads bfloat16 and was tested with `transformers` 5.19.0. A T4 has no native bfloat16 and no FlashAttention 2, so this notebook loads **float16** (~1.7 GB of weights) with **SDPA** (eager if SDPA refuses the hybrid stack) and pins `transformers==5.20.1`. Do not install `flash-attn`, `flash-linear-attention`, or `causal-conv1d`. First run downloads the 1.7 GB safetensors shard. After load you should see a few GB allocated; short tool loops stay well under 15 GB. Those VRAM figures are from the weight file plus a 4096-token generate cap, not a measured Colab run.
+Pick a T4 GPU (*Runtime > Change runtime type > T4 GPU*). The card example loads bfloat16 and was tested with `transformers` 5.19.0. A T4 has no native bfloat16 and no FlashAttention 2, so this notebook loads **float16** with **SDPA** (eager if SDPA refuses the hybrid stack) and pins `transformers==5.20.1`. Do not install `flash-attn`, `flash-linear-attention`, or `causal-conv1d`. First run downloads the 1.7 GB safetensors shard. A Colab T4 run peaked at about **1.6 GB** allocated.
 
 Sampling follows the card / `generation_config.json`: `temperature=0.3`, `top_p=0.95`, `top_k=20`, `do_sample=True`. Always pass `enable_thinking=True` (the template defaults to non-thinking). The card snippet uses `max_new_tokens=4096`; evaluations allowed up to 32,768, which does not fit a T4 KV cache here.
 
@@ -26,7 +26,7 @@ Sampling follows the card / `generation_config.json`: `temperature=0.3`, `top_p=
 
 - Load BotPsy-0.8B in float16 on a T4.
 - **Demo A:** one `create_event` call (card-style calendar schema), parse the XML, run a fake function, feed the result back.
-- **Demo B:** multi-step loop with `get_weather`, `list_events`, and `create_event` over obviously sample Lisbon / calendar data.
+- **Demo B:** multi-step loop with `get_weather`, `list_events`, and `create_event` over sample Lisbon weather and a Saturday calendar that already has a 10:00 ferry (`day_status: has_events`). The wrap-up quotes those tool fields; a follow-up cell prints whether the answer agrees with the JSON.
 - **Demo C:** a rent-transfer + text request with only weather/calendar tools, so the model should decline rather than hallucinate a call.
 
 ## Links
