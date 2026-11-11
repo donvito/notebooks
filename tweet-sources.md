@@ -15,7 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
-| [BotPsy-0.8B-tool-calling-assistant.ipynb](colab/BotPsy-0.8B-tool-calling-assistant.ipynb) | BotPsy-0.8B | https://huggingface.co/qvac/BotPsy-0.8B | https://x.com/BitcoinNews/status/2120542632380190952 | — | 2026-11-12 |
+| [BotPsy-0.8B-tool-calling-assistant.ipynb](colab/BotPsy-0.8B-tool-calling-assistant.ipynb) | BotPsy-0.8B | https://huggingface.co/qvac/BotPsy-0.8B | https://x.com/BitcoinNews/status/2120542632380190952 | [#70](https://github.com/donvito/notebooks/pull/70) | 2026-11-12 03:12 |
 | [ARLoop-1.2B-looped-transformer.ipynb](colab/ARLoop-1.2B-looped-transformer.ipynb) | ARLoop-1.2B | https://huggingface.co/osunlp/ARLoop-1.2B | https://x.com/yuekun_yao/status/2119982422259622086 | [#69](https://github.com/donvito/notebooks/pull/69) | 2026-11-11 03:03 |
 | [tropa-voice-mini-ai-voice-detector.ipynb](colab/tropa-voice-mini-ai-voice-detector.ipynb) | tropa-voice-mini | https://huggingface.co/wasitaigeneratedcom/ai-voice-detector-small | https://x.com/wiagenerated/status/2119776813237096523 | [#68](https://github.com/donvito/notebooks/pull/68) | 2026-11-10 03:06 |
 | [Spark-X2.6-1.7B-on-device-agent.ipynb](colab/Spark-X2.6-1.7B-on-device-agent.ipynb) | Spark-X2.6-1.7B | https://huggingface.co/XHToken/Spark-X2.6-1.7B | https://x.com/SparkLLM/status/2115100695775056057 | [#60](https://github.com/donvito/notebooks/pull/60) | 2026-11-09 |
