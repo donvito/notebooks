@@ -15,7 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
-| [granite-4.1-3b-llmon-preview-prompt-injection-guard.ipynb](colab/granite-4.1-3b-llmon-preview-prompt-injection-guard.ipynb) | Granite-4.1-3B-LLMON-preview | https://huggingface.co/ibm-granite/granite-4.1-3b-llmon-preview | https://x.com/aitrackerbot/status/2120941082871468145 | TBD | 2026-11-14 |
+| [granite-4.1-3b-llmon-preview-prompt-injection-guard.ipynb](colab/granite-4.1-3b-llmon-preview-prompt-injection-guard.ipynb) | Granite-4.1-3B-LLMON-preview | https://huggingface.co/ibm-granite/granite-4.1-3b-llmon-preview | https://x.com/aitrackerbot/status/2120941082871468145 | [#72](https://github.com/donvito/notebooks/pull/72) | 2026-11-14 |
 | [ci-proto-time-series-forecast.ipynb](colab/ci-proto-time-series-forecast.ipynb) | ci-proto | https://huggingface.co/ContinuousIntelligence/ci-proto | https://x.com/Continu_Intel/status/2120852944056709139 | [#71](https://github.com/donvito/notebooks/pull/71) | 2026-11-13 03:04 |
 | [BotPsy-0.8B-tool-calling-assistant.ipynb](colab/BotPsy-0.8B-tool-calling-assistant.ipynb) | BotPsy-0.8B | https://huggingface.co/qvac/BotPsy-0.8B | https://x.com/BitcoinNews/status/2120542632380190952 | [#70](https://github.com/donvito/notebooks/pull/70) | 2026-11-12 03:12 |
 | [ARLoop-1.2B-looped-transformer.ipynb](colab/ARLoop-1.2B-looped-transformer.ipynb) | ARLoop-1.2B | https://huggingface.co/osunlp/ARLoop-1.2B | https://x.com/yuekun_yao/status/2119982422259622086 | [#69](https://github.com/donvito/notebooks/pull/69) | 2026-11-11 03:03 |
