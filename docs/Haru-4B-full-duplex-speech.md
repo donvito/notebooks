@@ -17,14 +17,14 @@
 
 ## Running it on a free Colab T4
 
-Pick a T4 GPU. The card says an NVIDIA GPU needs about **12 GB**. Saved weights are bfloat16 (`model.safetensors` ~10.5 GB); 5.27B parameters in float16 are ~9.8 GB. A free T4 has no native BF16 and ~15 GB total. The card helper `HaruModel.from_pretrained(..., device="cuda", dtype=torch.float16)` loads the whole bf16 shard onto the GPU and then casts, which OOMs a T4 (~14.4 GB allocated). This notebook builds the module on the meta device in float16 and copies each tensor to CUDA already as float16 (one GPU copy; expect ~10–11.5 GB allocated after load). Restart the session after install so `transformers>=5.16` is what gets imported. Install is the card's `pip install -e ./haru` from [higurashi-ai/Haru](https://github.com/higurashi-ai/Haru), pinned to commit `7fe6b7665f8bf035998f401f8cb779fbe53f2751`, without replacing Colab's torch. The Triton codec extra is skipped (it needs bfloat16 on CUDA). First run downloads the 10.5 GB shard; the last cell prints measured peak VRAM.
+Pick a T4 GPU. The card says an NVIDIA GPU needs about **12 GB**. Saved weights are bfloat16 (`model.safetensors` ~10.5 GB); 5.27B parameters in float16 are ~9.8 GB. A free T4 has no native BF16 and ~15 GB total. The card helper `HaruModel.from_pretrained(..., device="cuda", dtype=torch.float16)` loads the whole bf16 shard onto the GPU and then casts, which OOMs a T4 (~14.4 GB allocated). This notebook builds the module on the meta device in float16 and copies each tensor to CUDA already as float16 (one GPU copy; expect ~10–11.5 GB allocated after load). Non-persistent RoPE `inv_freq` and MeanFlow `freqs` buffers are omitted from the shard, so they are recomputed on CUDA instead of calling `model.to()` (which raises on leftover meta tensors). Restart the session after install so `transformers>=5.16` is what gets imported. Install is the card's `pip install -e ./haru` from [higurashi-ai/Haru](https://github.com/higurashi-ai/Haru), pinned to commit `7fe6b7665f8bf035998f401f8cb779fbe53f2751`, without replacing Colab's torch. The Triton codec extra is skipped (it needs bfloat16 on CUDA). First run downloads the 10.5 GB shard; the last cell prints measured peak VRAM.
 
 ## What the notebook demos
 
 - Early GPU check (`torch.cuda.is_available()`, device name, free VRAM).
 - Card install, keeping Colab's torch, plus a restart note.
 - Runtime check and T4 dtype (float16).
-- T4-safe load: meta-device construct in float16, then one CUDA copy (not `from_pretrained(..., device="cuda")`).
+- T4-safe load: meta-device construct in float16, one CUDA copy (not `from_pretrained(..., device="cuda")`), then recompute leftover non-persistent buffers so nothing stays on meta.
 - Public LibriSpeech dummy clips as the voice reference and user utterance (source stated).
 - Demo 1: README character card, feed a prerecorded utterance in 3200-sample frames, pad with silence, save/play model audio, print the text stream.
 - Demo 2: same user clip with the bundled English `chat` card and a different speaker as the voice.
