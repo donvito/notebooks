@@ -15,7 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
-| [Haru-4B-full-duplex-speech.ipynb](colab/Haru-4B-full-duplex-speech.ipynb) | Haru-4B | https://huggingface.co/higurashi-ai/Haru-4B | https://x.com/HigurashiAI/status/2121052314773717386 | PR pending | 2026-11-16 |
+| [Haru-4B-full-duplex-speech.ipynb](colab/Haru-4B-full-duplex-speech.ipynb) | Haru-4B | https://huggingface.co/higurashi-ai/Haru-4B | https://x.com/HigurashiAI/status/2121052314773717386 | [#76](https://github.com/donvito/notebooks/pull/76) | 2026-11-16 |
 | [Fluid-Speech-Pro-multilingual-asr.ipynb](colab/Fluid-Speech-Pro-multilingual-asr.ipynb) | Fluid Speech Pro | https://huggingface.co/FluidVoice-Labs/fluid-speech-pro | https://x.com/FluidVoiceApp/status/2121308183314796772 | [#74](https://github.com/donvito/notebooks/pull/74) | 2026-11-15 |
 | [ZONOS3-Mini-voice-clone-tts.ipynb](colab/ZONOS3-Mini-voice-clone-tts.ipynb) | ZONOS3-Mini | https://huggingface.co/Zyphra/ZONOS3-Mini-hf | https://x.com/ZyphraAI/status/2119914895861076151 | [#73](https://github.com/donvito/notebooks/pull/73) | 2026-11-15 |
 | [granite-4.1-3b-llmon-preview-prompt-injection-guard.ipynb](colab/granite-4.1-3b-llmon-preview-prompt-injection-guard.ipynb) | Granite-4.1-3B-LLMON-preview | https://huggingface.co/ibm-granite/granite-4.1-3b-llmon-preview | https://x.com/aitrackerbot/status/2120941082871468145 | [#72](https://github.com/donvito/notebooks/pull/72) | 2026-11-14 |
