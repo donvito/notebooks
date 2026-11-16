@@ -15,6 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
+| [Nemotron-Labs-Sigma-distill-spec-3B-self-speculative-diffusion.ipynb](colab/Nemotron-Labs-Sigma-distill-spec-3B-self-speculative-diffusion.ipynb) | Nemotron-Labs-Sigma-distill-spec-3B | https://huggingface.co/nvidia/Nemotron-Labs-Sigma-distill-spec-3B | https://x.com/HuggingPapers/status/2122382659796021592 | — | 2026-11-17 |
 | [Haru-4B-full-duplex-speech.ipynb](colab/Haru-4B-full-duplex-speech.ipynb) | Haru-4B | https://huggingface.co/higurashi-ai/Haru-4B | https://x.com/HigurashiAI/status/2121052314773717386 | [#76](https://github.com/donvito/notebooks/pull/76) | 2026-11-16 |
 | [Mirage-tiny-vision-structured-extraction.ipynb](colab/Mirage-tiny-vision-structured-extraction.ipynb) | Mirage | https://huggingface.co/Cactus-Compute/mirage | https://x.com/cactuscompute/status/2118761482343313844 | [#75](https://github.com/donvito/notebooks/pull/75) | 2026-11-16 |
 | [Fluid-Speech-Pro-multilingual-asr.ipynb](colab/Fluid-Speech-Pro-multilingual-asr.ipynb) | Fluid Speech Pro | https://huggingface.co/FluidVoice-Labs/fluid-speech-pro | https://x.com/FluidVoiceApp/status/2121308183314796772 | [#74](https://github.com/donvito/notebooks/pull/74) | 2026-11-15 |
