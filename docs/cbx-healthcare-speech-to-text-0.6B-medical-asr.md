@@ -18,12 +18,12 @@
 
 ## Running it on a free Colab T4
 
-Pick a T4 GPU. The card install is `hf download ... --revision v0.1` then `pip install -r requirements.txt`. That file pins `qwen-asr==0.0.6`, `transformers==4.57.6`, `peft==0.21.2`, `librosa`, and `torch>=2.4`. The notebook **does not reinstall torch** (Colab already has a CUDA wheel) and skips `qwen-asr` CLI extras (`gradio`, `flask`, `sox`). Restart the session after install so `transformers==4.57.6` is what gets imported. `SpeechToText` merges the adapter in fp32, then uses float16 on CUDA. First run downloads the ~1.9 GB `Qwen/Qwen3-ASR-0.6B` checkpoint plus the ~40 MB adapter. The card’s T4 speed figure (about 2.4 s per minute of speech, fp16, batch 16) is from the card, not a measurement from this notebook. Peak VRAM is printed at the end of the notebook.
+Pick a T4 GPU. The card install is `hf download ... --revision v0.1` then `pip install -r requirements.txt`. That file pins `qwen-asr==0.0.6`, `transformers==4.57.6`, `peft==0.21.2`, `librosa`, and `torch>=2.4`. The notebook **does not reinstall torch** (Colab already has a CUDA wheel) and skips `qwen-asr` CLI extras (`gradio`, `flask`, `sox`). It also **uninstalls Colab’s `torchao` 0.10.0** (`peft==0.21.2` raises if that version is present; this notebook does not use torchao) and pins **`huggingface_hub>=0.34,<1`** (transformers 4.57.6’s range; hub 2.x is incompatible and pops Colab `HF_TOKEN` secrets). The install cell restarts the session so `transformers==4.57.6` is what gets imported. `SpeechToText` merges the adapter in fp32, then uses float16 on CUDA. First run downloads the ~1.9 GB `Qwen/Qwen3-ASR-0.6B` checkpoint plus the ~40 MB adapter. The card’s T4 speed figure (about 2.4 s per minute of speech, fp16, batch 16) is from the card, not a measurement from this notebook. Peak VRAM is printed at the end of the notebook.
 
 ## What the notebook demos
 
 - GPU check (`torch.cuda.is_available()`, device name, free VRAM).
-- Card install at revision v0.1, keeping Colab’s torch.
+- Card install at revision v0.1, keeping Colab’s torch, uninstalling torchao, pinning `huggingface_hub<1`, then an automatic session restart.
 - `SpeechToText` load (`Qwen/Qwen3-ASR-0.6B` + this adapter).
 - PriMock57 mock GP clips from the card’s `example.py` (`day1_consultation01_doctor`), reference vs output, with a public-audio fallback if that download fails.
 - Base `Qwen3-ASR-0.6B` vs the adapter on the same clip, skipped on CUDA OOM.
