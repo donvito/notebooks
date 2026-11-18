@@ -15,6 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
+| [tiny-voca-4.5M-english-tts.ipynb](colab/tiny-voca-4.5M-english-tts.ipynb) | tiny-voca | https://huggingface.co/n4ze3m/tiny-voca | https://x.com/n4ze3m/status/2121799813679419515 | [#80](https://github.com/donvito/notebooks/pull/80) | 2026-11-19 |
 | [cbx-healthcare-speech-to-text-0.6B-medical-asr.ipynb](colab/cbx-healthcare-speech-to-text-0.6B-medical-asr.ipynb) | cbx-healthcare-speech-to-text-0.6B | https://huggingface.co/CobuildX-AI/cbx-healthcare-speech-to-text-0.6B | https://x.com/sairaamv/status/2122704454306922853 | [#79](https://github.com/donvito/notebooks/pull/79) | 2026-11-18 |
 | [ARC-1.0-agent-model-router.ipynb](colab/ARC-1.0-agent-model-router.ipynb) | ARC 1.0 | https://huggingface.co/rayline-ai/ARC-1.0 | https://x.com/davidvgilmore/status/2120583960447029699 | [#78](https://github.com/donvito/notebooks/pull/78) | 2026-11-17 |
 | [Nemotron-Labs-Sigma-distill-spec-3B-self-speculative-diffusion.ipynb](colab/Nemotron-Labs-Sigma-distill-spec-3B-self-speculative-diffusion.ipynb) | Nemotron-Labs-Sigma-distill-spec-3B | https://huggingface.co/nvidia/Nemotron-Labs-Sigma-distill-spec-3B | https://x.com/HuggingPapers/status/2122382659796021592 | [#77](https://github.com/donvito/notebooks/pull/77) | 2026-11-17 |
