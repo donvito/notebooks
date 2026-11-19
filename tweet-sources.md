@@ -15,6 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
+| [Rumble-2-Flash-noisy-speech-to-text.ipynb](colab/Rumble-2-Flash-noisy-speech-to-text.ipynb) | Rumble-2-Flash | https://huggingface.co/Reson8/Rumble-2-Flash | https://x.com/raoulritterr/status/2123053360773271563 | [#81](https://github.com/donvito/notebooks/pull/81) | 2026-11-20 |
 | [tiny-voca-4.5M-english-tts.ipynb](colab/tiny-voca-4.5M-english-tts.ipynb) | tiny-voca | https://huggingface.co/n4ze3m/tiny-voca | https://x.com/n4ze3m/status/2121799813679419515 | [#80](https://github.com/donvito/notebooks/pull/80) | 2026-11-19 |
 | [cbx-healthcare-speech-to-text-0.6B-medical-asr.ipynb](colab/cbx-healthcare-speech-to-text-0.6B-medical-asr.ipynb) | cbx-healthcare-speech-to-text-0.6B | https://huggingface.co/CobuildX-AI/cbx-healthcare-speech-to-text-0.6B | https://x.com/sairaamv/status/2122704454306922853 | [#79](https://github.com/donvito/notebooks/pull/79) | 2026-11-18 |
 | [ARC-1.0-agent-model-router.ipynb](colab/ARC-1.0-agent-model-router.ipynb) | ARC 1.0 | https://huggingface.co/rayline-ai/ARC-1.0 | https://x.com/davidvgilmore/status/2120583960447029699 | [#78](https://github.com/donvito/notebooks/pull/78) | 2026-11-17 |
