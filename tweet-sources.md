@@ -15,7 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
-| [Jeveration-single-pass-image-generation.ipynb](colab/Jeveration-single-pass-image-generation.ipynb) | Jeveration | https://huggingface.co/linlinlinlinsdada/Jeveration | https://x.com/carol00892/status/2123808797009543293 | PR pending | 2026-11-21 |
+| [Jeveration-single-pass-image-generation.ipynb](colab/Jeveration-single-pass-image-generation.ipynb) | Jeveration | https://huggingface.co/linlinlinlinsdada/Jeveration | https://x.com/carol00892/status/2123808797009543293 | [#84](https://github.com/donvito/notebooks/pull/84) | 2026-11-21 |
 | [Rumble-2-Flash-noisy-speech-to-text.ipynb](colab/Rumble-2-Flash-noisy-speech-to-text.ipynb) | Rumble-2-Flash | https://huggingface.co/Reson8/Rumble-2-Flash | https://x.com/raoulritterr/status/2123053360773271563 | [#81](https://github.com/donvito/notebooks/pull/81) | 2026-11-20 |
 | [tiny-voca-4.5M-english-tts.ipynb](colab/tiny-voca-4.5M-english-tts.ipynb) | tiny-voca | https://huggingface.co/n4ze3m/tiny-voca | https://x.com/n4ze3m/status/2121799813679419515 | [#80](https://github.com/donvito/notebooks/pull/80) | 2026-11-19 |
 | [cbx-healthcare-speech-to-text-0.6B-medical-asr.ipynb](colab/cbx-healthcare-speech-to-text-0.6B-medical-asr.ipynb) | cbx-healthcare-speech-to-text-0.6B | https://huggingface.co/CobuildX-AI/cbx-healthcare-speech-to-text-0.6B | https://x.com/sairaamv/status/2122704454306922853 | [#79](https://github.com/donvito/notebooks/pull/79) | 2026-11-18 |
