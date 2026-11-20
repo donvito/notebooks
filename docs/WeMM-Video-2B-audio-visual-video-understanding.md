@@ -19,12 +19,12 @@
 
 ## Running it on a free Colab T4
 
-Pick a T4 GPU. GitHub install pins `torch==2.10.0`, `torchcodec==0.10.0`, and `transformers==5.2.0` (`config.json` records `transformers_version: 5.2.0`). **Do not reinstall Colab’s CUDA torch.** The notebook keeps that wheel, installs `transformers>=5.2.0` (current Colab 5.x already satisfies it), `accelerate`, `pillow`, `librosa`, `soundfile`, `scipy`, `requests`, `av`, and `jinja2>=3.1.6`, then restarts the session. `trust_remote_code` is required. Custom `wemm_media.py` decodes with **torchcodec**; if that fails, the notebook patches in PyAV (video) and soundfile/librosa (audio). First run downloads **6.12 GiB**. Video is capped at 8 frames / 1 fps / 262144 total pixels (even counts; `temporal_patch_size=2`). Peak VRAM is printed at the end of the notebook.
+Pick a T4 GPU. GitHub install pins `torch==2.10.0`, `torchcodec==0.10.0`, and `transformers==5.2.0` (`config.json` records `transformers_version: 5.2.0`). **Do not reinstall Colab’s CUDA torch.** The notebook keeps that wheel, installs `transformers>=5.2.0` (current Colab 5.x already satisfies it), `accelerate`, `pillow`, `librosa`, `soundfile`, `scipy`, `requests`, `av`, and `jinja2>=3.1.6`, then restarts the session. `trust_remote_code` is required. Custom `wemm_media.py` decodes with **torchcodec**; if that fails, the notebook patches in PyAV (video) and soundfile/librosa (audio). First run downloads **6.12 GiB**. Video is capped at 8 frames / 1 fps / 262144 total pixels (even counts; `temporal_patch_size=2`). After load, leftover **bfloat16** weights are recast to float16: `h5_modeling_whisper.py` hardcodes `torch_dtype=torch.bfloat16` on the audio Q-Former and `audio_proj`, which otherwise hits `F.layer_norm` with `expected scalar type Half but found BFloat16`. Processor floating tensors are cast to float16 before generate. Peak VRAM is printed at the end of the notebook.
 
 ## What the notebook demos
 
 - GPU check (`torch.cuda.is_available()`, device name, free VRAM).
-- Card Transformers load in **float16** on T4 (`AutoProcessor` + `AutoModelForImageTextToText`, `device_map="auto"`, SDPA then eager). Empty/NaN replies recast LayerNorms to float32 and retry once.
+- Card Transformers load in **float16** on T4 (`AutoProcessor` + `AutoModelForImageTextToText`, `device_map="auto"`, SDPA then eager). Leftover bf16 Q-Former / `audio_proj` weights are recast to float16; processor floats are cast to the same dtype before generate.
 - `video_audio`: official Apollo 11 television clip from the GitHub examples (NASA archives), with a synthesized moving-square + speech/tone fallback.
 - Image question on the official Apollo 11 Earth still (NASA / COCO fallbacks).
 - Audio transcription plus a one-sentence summary on the official “small step” WAV (Hugging Face dummy speech / espeak fallbacks).
