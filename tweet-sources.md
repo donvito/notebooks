@@ -15,6 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
+| [Qwen3.5-4B-Memory-V2-fact-extraction-gguf.ipynb](colab/Qwen3.5-4B-Memory-V2-fact-extraction-gguf.ipynb) | Qwen3.5-4B-Memory-V2 | https://huggingface.co/IMLIULIAN/qwen3.5-4b-memory-v2 | https://x.com/Wrongvqxi/status/2123784817078866265 | [#86](https://github.com/donvito/notebooks/pull/86) | 2026-11-22 |
 | [Jeveration-single-pass-image-generation.ipynb](colab/Jeveration-single-pass-image-generation.ipynb) | Jeveration | https://huggingface.co/linlinlinlinsdada/Jeveration | https://x.com/carol00892/status/2123808797009543293 | [#84](https://github.com/donvito/notebooks/pull/84) | 2026-11-21 |
 | [WeMM-Video-2B-audio-visual-video-understanding.ipynb](colab/WeMM-Video-2B-audio-visual-video-understanding.ipynb) | WeMM-Video-2B | https://huggingface.co/tencent/WeMM-Video-2B | https://x.com/HuggingPapers/status/2123750396002767170 | [#83](https://github.com/donvito/notebooks/pull/83) | 2026-11-21 |
 | [Inkling-2-Mini-UD-Q3-GGUF-llamacpp.ipynb](colab/Inkling-2-Mini-UD-Q3-GGUF-llamacpp.ipynb) | Inkling 2 Mini UD-Q3 GGUF | https://huggingface.co/unsloth/Inkling-2-Mini-GGUF | Direct request from Melvin (no tweet) | [#85](https://github.com/donvito/notebooks/pull/85) | 2026-11-21 |
