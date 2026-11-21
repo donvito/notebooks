@@ -13,17 +13,19 @@
 
 - **Compiling llama.cpp on Colab.** CUDA source builds on a free T4 repeatedly disconnect the runtime (see [PR #82](https://github.com/donvito/notebooks/pull/82)). This notebook only unpacks Unsloth’s Linux CUDA 12 tarball.
 - **`Mainline_Support/*.gguf_file`.** Those copies need mainline llama.cpp plus unmerged [PR #32704](https://github.com/ggml-org/llama.cpp/pull/32704). The root files use Unsloth’s looped layout and match Unsloth’s prebuilts.
-- **Full GPU offload of UD-Q3_K_XL on 15 GB.** 13.63 GB weights + 0.64 GB projector + KV cache will not fit. Use `--n-cpu-moe` (default 16) or the **UD-IQ3_XXS** (11.66 GB) fallback.
-- **The card’s 1M / 32K context.** The notebook caps context at **8,192** tokens so the T4 stays interactive.
-- **A published tokens/sec number.** Expert layers on Colab’s ~2 CPU cores are slow; the notebook’s demo table and the **⏱ Benchmark** section (`llama-bench` pp512/tg128 plus three server `timings` prompts) print a measurement from the session you run, not a leaderboard figure. The benchmark is capped so a T4 run stays around five minutes.
+- **Full GPU offload of UD-Q3_K_XL on 15 GB.** 13.63 GB weights + 0.64 GB projector + KV cache will not fit. Keep most experts on the GPU with a small `--n-cpu-moe`, or use the **UD-IQ3_XXS** (11.66 GB, nearly fully GPU) option.
+- **The card’s 1M / 32K context.** The notebook caps context at **4,096** tokens so KV plus GPU-resident experts fit and demos finish in reasonable time.
+- **A published tokens/sec number.** Expert layers that stay on Colab’s ~2 CPU cores are slow, and too many of them also thrash ~12.7 GB of system RAM. The notebook’s demo table and the **⏱ Benchmark** section (`llama-bench` pp512/tg128 plus three server `timings` prompts) print a measurement from the session you run, not a leaderboard figure. The benchmark is capped so a T4 run stays around five minutes.
 
 ## Running it on a free Colab T4
 
-Pick a T4 GPU. Default weights are **UD-Q3_K_XL** (13.63 GB) + **mmproj-F16** (0.64 GB). The server is Unsloth `llama-server` (`-ngl 99`, **`--n-cpu-moe 16`**, `-c 8192`, `-fa auto`, `--jinja`, mmap, no `--mlock`).
+Pick a T4 GPU. Default weights are **UD-Q3_K_XL** (13.63 GB) + **mmproj-F16** (0.64 GB). The server is Unsloth `llama-server` (`-ngl 99`, auto-picked `--n-cpu-moe`, `-c 4096`, `-fa auto`, `--jinja`, mmap, no `--mlock`).
 
-**`--n-cpu-moe`:** last N of 24 MoE layers keep expert weights in system RAM (~12.7 GB, mmap). **16** is conservative. Raise toward **24** if you OOM; lower toward **8** if `nvidia-smi` shows headroom (more experts on the GPU, usually faster).
+**`--n-cpu-moe` (the T4 fit knob):** last N of 24 MoE layers keep expert weights in system RAM (mmap). Colab RAM is only ~12.7 GB, so **most experts should sit in VRAM**. N that is too large (for example 16) leaves several GB of T4 VRAM free and is slow because CPU experts page-cache-thrash. The download cell reads GGUF expert tensor sizes, estimates per-layer expert VRAM, and **auto-picks the smallest N** that leaves ~**1.5 GB** VRAM headroom (target ~12.5–13 GB used on a 15 GB T4). If the GGUF cannot be read, it falls back to **4**. The chosen value is printed. If `llama-server` fails to start or OOMs, the server cell retries with **`N_CPU_MOE+2`**. Set `N_CPU_MOE_OVERRIDE` to an int to force a value.
 
-**If Q3_K_XL cannot work on T4:** set `QUANT = "UD-IQ3_XXS"` in the download cell (11.66 GB) and rerun from there. The notebook prints that fallback when it is selected.
+**If Q3_K_XL still cannot work on T4:** set `QUANT = "UD-IQ3_XXS"` in the download cell (11.66 GB, nearly fully GPU) and rerun from there. The notebook prints that option when load still fails.
+
+Chat completions cap at **384** tokens; coding tests cap at **768** with a per-request timeout. Prompts ask the model to answer concisely. Coding cells catch timeouts so one slow test does not kill the run.
 
 The binary is resolved at runtime from the GitHub API (`unslothai/llama.cpp/releases/latest`) with pinned fallback tag **`b12588-mix-c0c3de8`**. `llama-prebuilt-manifest.json` picks the Linux x64 CUDA 12 asset that includes **sm_75** (portable if it lists 75, otherwise `cuda12-older`).
 
@@ -33,12 +35,12 @@ Sampler: temperature 1.0, top-p 1.0, top-k 0, min-p 0. Public Hub repo — cance
 
 - GPU / VRAM check.
 - Unsloth CUDA 12 prebuilt `llama-server` (no compile).
-- `hf download` of only the GGUF + projector.
+- `hf download` of only the GGUF + projector, then auto-pick `--n-cpu-moe`.
 - Text chat / reasoning question.
-- Three coding tests with **executed** asserts: merge overlapping intervals, fix `longest_run`, SQL department averages via `sqlite3`.
+- Three coding tests with **executed** asserts: merge overlapping intervals, fix `longest_run`, SQL department averages via `sqlite3` (timeout + try/except per test).
 - Image question on a public sample (with fallbacks).
 - Tokens/sec and peak `nvidia-smi` VRAM.
-- **⏱ Benchmark** (after the demos, before kill): three server prompts (short, ~1k-token prompt, 512-token generation) reporting prompt tok/s and generation tok/s from `timings`; then stop `llama-server` and run prebuilt `llama-bench -p 512 -n 128 -r 2` with the same `-ngl` / `--n-cpu-moe` / `-fa` if the binary is in the tarball (skip with a message if it is not — no compile).
+- **⏱ Benchmark** (after the demos, before kill): three server prompts (short, ~1k-token prompt, 512-token generation) reporting prompt tok/s and generation tok/s from `timings`; then stop `llama-server` and run prebuilt `llama-bench -p 512 -n 128 -r 2` with the **same chosen** `-ngl` / `--n-cpu-moe` / `-fa` if the binary is in the tarball (skip with a message if it is not — no compile).
 - Kill the server.
 
 ## Links
