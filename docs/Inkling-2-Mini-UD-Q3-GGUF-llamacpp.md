@@ -15,7 +15,7 @@
 - **`Mainline_Support/*.gguf_file`.** Those copies need mainline llama.cpp plus unmerged [PR #32704](https://github.com/ggml-org/llama.cpp/pull/32704). The root files use Unsloth’s looped layout and match Unsloth’s prebuilts.
 - **Full GPU offload of UD-Q3_K_XL on 15 GB.** 13.63 GB weights + 0.64 GB projector + KV cache will not fit. Use `--n-cpu-moe` (default 16) or the **UD-IQ3_XXS** (11.66 GB) fallback.
 - **The card’s 1M / 32K context.** The notebook caps context at **8,192** tokens so the T4 stays interactive.
-- **A published tokens/sec number.** Expert layers on Colab’s ~2 CPU cores are slow; the notebook prints a measurement from the session you run, not a leaderboard figure.
+- **A published tokens/sec number.** Expert layers on Colab’s ~2 CPU cores are slow; the notebook’s demo table and the **⏱ Benchmark** section (`llama-bench` pp512/tg128 plus three server `timings` prompts) print a measurement from the session you run, not a leaderboard figure. The benchmark is capped so a T4 run stays around five minutes.
 
 ## Running it on a free Colab T4
 
@@ -37,7 +37,9 @@ Sampler: temperature 1.0, top-p 1.0, top-k 0, min-p 0. Public Hub repo — cance
 - Text chat / reasoning question.
 - Three coding tests with **executed** asserts: merge overlapping intervals, fix `longest_run`, SQL department averages via `sqlite3`.
 - Image question on a public sample (with fallbacks).
-- Tokens/sec and peak `nvidia-smi` VRAM, then kill the server.
+- Tokens/sec and peak `nvidia-smi` VRAM.
+- **⏱ Benchmark** (after the demos, before kill): three server prompts (short, ~1k-token prompt, 512-token generation) reporting prompt tok/s and generation tok/s from `timings`; then stop `llama-server` and run prebuilt `llama-bench -p 512 -n 128 -r 2` with the same `-ngl` / `--n-cpu-moe` / `-fa` if the binary is in the tarball (skip with a message if it is not — no compile).
+- Kill the server.
 
 ## Links
 
