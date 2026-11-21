@@ -15,7 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
-| [shot-reader-8b-video-shot-to-3d-scene.ipynb](colab/shot-reader-8b-video-shot-to-3d-scene.ipynb) | Shot Reader 8B | https://huggingface.co/voyager-so/shot-reader-8b | https://x.com/j_h_h_3/status/2123532630645977367 | [#PR](https://github.com/donvito/notebooks/pull/PR) | 2026-11-22 |
+| [shot-reader-8b-video-shot-to-3d-scene.ipynb](colab/shot-reader-8b-video-shot-to-3d-scene.ipynb) | Shot Reader 8B | https://huggingface.co/voyager-so/shot-reader-8b | https://x.com/j_h_h_3/status/2123532630645977367 | [#87](https://github.com/donvito/notebooks/pull/87) | 2026-11-22 |
 | [Jeveration-single-pass-image-generation.ipynb](colab/Jeveration-single-pass-image-generation.ipynb) | Jeveration | https://huggingface.co/linlinlinlinsdada/Jeveration | https://x.com/carol00892/status/2123808797009543293 | [#84](https://github.com/donvito/notebooks/pull/84) | 2026-11-21 |
 | [WeMM-Video-2B-audio-visual-video-understanding.ipynb](colab/WeMM-Video-2B-audio-visual-video-understanding.ipynb) | WeMM-Video-2B | https://huggingface.co/tencent/WeMM-Video-2B | https://x.com/HuggingPapers/status/2123750396002767170 | [#83](https://github.com/donvito/notebooks/pull/83) | 2026-11-21 |
 | [Inkling-2-Mini-UD-Q3-GGUF-llamacpp.ipynb](colab/Inkling-2-Mini-UD-Q3-GGUF-llamacpp.ipynb) | Inkling 2 Mini UD-Q3 GGUF | https://huggingface.co/unsloth/Inkling-2-Mini-GGUF | Direct request from Melvin (no tweet) | [#85](https://github.com/donvito/notebooks/pull/85) | 2026-11-21 |
