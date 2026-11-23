@@ -15,6 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
+| [Lev-3B-log-anomaly-decisions.ipynb](colab/Lev-3B-log-anomaly-decisions.ipynb) | Lev-3B | https://huggingface.co/cisco-ai/lev-3b | https://x.com/LiangGou/status/2124705890242838645 | — | 2026-11-24 |
 | [shot-reader-8b-video-shot-to-3d-scene.ipynb](colab/shot-reader-8b-video-shot-to-3d-scene.ipynb) | Shot Reader 8B | https://huggingface.co/voyager-so/shot-reader-8b | https://x.com/j_h_h_3/status/2123532630645977367 | [#87](https://github.com/donvito/notebooks/pull/87) | 2026-11-22 |
 | [Qwen3.5-4B-Memory-V2-fact-extraction-gguf.ipynb](colab/Qwen3.5-4B-Memory-V2-fact-extraction-gguf.ipynb) | Qwen3.5-4B-Memory-V2 | https://huggingface.co/IMLIULIAN/qwen3.5-4b-memory-v2 | https://x.com/Wrongvqxi/status/2123784817078866265 | [#86](https://github.com/donvito/notebooks/pull/86) | 2026-11-22 |
 | [Jeveration-single-pass-image-generation.ipynb](colab/Jeveration-single-pass-image-generation.ipynb) | Jeveration | https://huggingface.co/linlinlinlinsdada/Jeveration | https://x.com/carol00892/status/2123808797009543293 | [#84](https://github.com/donvito/notebooks/pull/84) | 2026-11-21 |
