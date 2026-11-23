@@ -15,6 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
+| [Inworld-Voice-Isolator-48k.ipynb](colab/Inworld-Voice-Isolator-48k.ipynb) | Inworld Voice Isolator v1 | https://huggingface.co/inworld/voice-isolator | https://x.com/inworld/status/2123120546908926300 | [#89](https://github.com/donvito/notebooks/pull/89) | 2026-11-23 |
 | [GLB-3D-Coder-4B-threejs-assets.ipynb](colab/GLB-3D-Coder-4B-threejs-assets.ipynb) | CCORE GLB-3D-Coder 4B | https://huggingface.co/ccore/Qwen3.5-4B-GLB-3D-Coder | https://x.com/alexdelrosso/status/2123780570526142700 | [#88](https://github.com/donvito/notebooks/pull/88) | 2026-11-22 |
 | [shot-reader-8b-video-shot-to-3d-scene.ipynb](colab/shot-reader-8b-video-shot-to-3d-scene.ipynb) | Shot Reader 8B | https://huggingface.co/voyager-so/shot-reader-8b | https://x.com/j_h_h_3/status/2123532630645977367 | [#87](https://github.com/donvito/notebooks/pull/87) | 2026-11-22 |
 | [Qwen3.5-4B-Memory-V2-fact-extraction-gguf.ipynb](colab/Qwen3.5-4B-Memory-V2-fact-extraction-gguf.ipynb) | Qwen3.5-4B-Memory-V2 | https://huggingface.co/IMLIULIAN/qwen3.5-4b-memory-v2 | https://x.com/Wrongvqxi/status/2123784817078866265 | [#86](https://github.com/donvito/notebooks/pull/86) | 2026-11-22 |
