@@ -16,6 +16,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
 | [Hy-MT3-1.8B-translation.ipynb](colab/Hy-MT3-1.8B-translation.ipynb) | Hy-MT3 1.8B | https://huggingface.co/tencent/Hy-MT3-1.8B | https://x.com/TencentAI_News/status/2125177755943960580 | [#92](https://github.com/donvito/notebooks/pull/92) | 2026-11-25 |
+| [Lev-3B-log-anomaly-decisions.ipynb](colab/Lev-3B-log-anomaly-decisions.ipynb) | Lev-3B | https://huggingface.co/cisco-ai/lev-3b | https://x.com/LiangGou/status/2124705890242838645 | [#91](https://github.com/donvito/notebooks/pull/91) | 2026-11-24 |
 | [Aion-1.0-Instruct-2.3B-on-device-slm.ipynb](colab/Aion-1.0-Instruct-2.3B-on-device-slm.ipynb) | Aion 1.0 Instruct 2.3B | https://huggingface.co/microsoft/Aion-1.0-Instruct-2.3B | https://x.com/mswnlz/status/2123114277330395257 | [#90](https://github.com/donvito/notebooks/pull/90) | 2026-11-24 |
 | [Inworld-Voice-Isolator-48k.ipynb](colab/Inworld-Voice-Isolator-48k.ipynb) | Inworld Voice Isolator v1 | https://huggingface.co/inworld/voice-isolator | https://x.com/inworld/status/2123120546908926300 | [#89](https://github.com/donvito/notebooks/pull/89) | 2026-11-23 |
 | [GLB-3D-Coder-4B-threejs-assets.ipynb](colab/GLB-3D-Coder-4B-threejs-assets.ipynb) | CCORE GLB-3D-Coder 4B | https://huggingface.co/ccore/Qwen3.5-4B-GLB-3D-Coder | https://x.com/alexdelrosso/status/2123780570526142700 | [#88](https://github.com/donvito/notebooks/pull/88) | 2026-11-22 |
