@@ -20,7 +20,7 @@
 
 ## Running it on a free Colab T4
 
-Pick a T4 GPU. Keep Colab’s CUDA torch. Install **`sentence-transformers[image]>=6.3.0`** and **`transformers>=5.13.1`** (the card’s pins; the video extra is skipped). Do not install `flash-attn`. Load `MultiVectorEncoder("tencent/OmniEVIE-4B")` with **float16 + SDPA** (eager fallback) and `batch_size=1` (the card’s tip for Qwen3.5 linear-attention layers). First run downloads **~9.1 GB**. Weight VRAM is about **9.1 GB**; peak while encoding a few 768 px images is an **estimate of ~10–13 GB**. Images are capped on the long edge so the session stays under ~14 GB.
+Pick a T4 GPU. Keep Colab’s CUDA torch. Install **`sentence-transformers[image]>=6.3.0`** and **`transformers>=5.13.1`** (the card’s pins; the video extra is skipped). Do not install `flash-attn`. Load `MultiVectorEncoder("tencent/OmniEVIE-4B")` with **float16 + SDPA** (eager fallback) and `batch_size=1` (the card’s tip for Qwen3.5 linear-attention layers). First run downloads **~9.1 GB**. Measured peak on a Colab T4 is **8.7 GB** (`torch.cuda.max_memory_allocated`) with `batch_size=1` and images capped on the long edge.
 
 ## What the notebook demos
 
