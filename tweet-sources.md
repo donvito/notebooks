@@ -15,6 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
+| [OmniEVIE-4B-multimodal-retrieval.ipynb](colab/OmniEVIE-4B-multimodal-retrieval.ipynb) | OmniEVIE-4B | https://huggingface.co/tencent/OmniEVIE-4B | https://x.com/paperswithcodee/status/2125530235802100031 | [#94](https://github.com/donvito/notebooks/pull/94) | 2026-11-26 |
 | [WePocketModel-4B-embed-vqa-decisions.ipynb](colab/WePocketModel-4B-embed-vqa-decisions.ipynb) | WePocketModel 1.0 4B | https://huggingface.co/tencent/WePocketModel1.0-4B | https://x.com/TencentAI_News/status/2125152448218034505 | [#93](https://github.com/donvito/notebooks/pull/93) | 2026-11-25 |
 | [Hy-MT3-1.8B-translation.ipynb](colab/Hy-MT3-1.8B-translation.ipynb) | Hy-MT3 1.8B | https://huggingface.co/tencent/Hy-MT3-1.8B | https://x.com/TencentAI_News/status/2125177755943960580 | [#92](https://github.com/donvito/notebooks/pull/92) | 2026-11-25 |
 | [Lev-3B-log-anomaly-decisions.ipynb](colab/Lev-3B-log-anomaly-decisions.ipynb) | Lev-3B | https://huggingface.co/cisco-ai/lev-3b | https://x.com/LiangGou/status/2124705890242838645 | [#91](https://github.com/donvito/notebooks/pull/91) | 2026-11-24 |
