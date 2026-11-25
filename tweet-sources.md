@@ -15,6 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
+| [OmniEVIE-4B-multimodal-retrieval.ipynb](colab/OmniEVIE-4B-multimodal-retrieval.ipynb) | OmniEVIE-4B | https://huggingface.co/tencent/OmniEVIE-4B | https://x.com/paperswithcodee/status/2125530235802100031 | — (PR pending) | 2026-11-26 |
 | [Hy-MT3-1.8B-translation.ipynb](colab/Hy-MT3-1.8B-translation.ipynb) | Hy-MT3 1.8B | https://huggingface.co/tencent/Hy-MT3-1.8B | https://x.com/TencentAI_News/status/2125177755943960580 | [#92](https://github.com/donvito/notebooks/pull/92) | 2026-11-25 |
 | [Aion-1.0-Instruct-2.3B-on-device-slm.ipynb](colab/Aion-1.0-Instruct-2.3B-on-device-slm.ipynb) | Aion 1.0 Instruct 2.3B | https://huggingface.co/microsoft/Aion-1.0-Instruct-2.3B | https://x.com/mswnlz/status/2123114277330395257 | [#90](https://github.com/donvito/notebooks/pull/90) | 2026-11-24 |
 | [Inworld-Voice-Isolator-48k.ipynb](colab/Inworld-Voice-Isolator-48k.ipynb) | Inworld Voice Isolator v1 | https://huggingface.co/inworld/voice-isolator | https://x.com/inworld/status/2123120546908926300 | [#89](https://github.com/donvito/notebooks/pull/89) | 2026-11-23 |
