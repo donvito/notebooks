@@ -15,6 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
+| [Parakeet-Singlish-v2-asr.ipynb](colab/Parakeet-Singlish-v2-asr.ipynb) | Parakeet Singlish v2 | https://huggingface.co/Scrya/parakeet-tdt-0.6b-singlish-v2 | https://x.com/testdanrun/status/2126149023539122644 | [#97](https://github.com/donvito/notebooks/pull/97) | 2026-11-28 |
 | [GigaAM-v4-multilingual-asr.ipynb](colab/GigaAM-v4-multilingual-asr.ipynb) | GigaAM-v4 + Multilingual-v2 | https://huggingface.co/ai-sage/GigaAM-v4 | https://x.com/aitrackerbot/status/2126228109972156712 | [#96](https://github.com/donvito/notebooks/pull/96) | 2026-11-28 |
 | [OCRia-1-document-parsing.ipynb](colab/OCRia-1-document-parsing.ipynb) | OCRia-1 | https://huggingface.co/llamaindex/OCRia-1 | https://x.com/llama_index/status/2125315040723062872 | [#95](https://github.com/donvito/notebooks/pull/95) | 2026-11-27 |
 | [OmniEVIE-4B-multimodal-retrieval.ipynb](colab/OmniEVIE-4B-multimodal-retrieval.ipynb) | OmniEVIE-4B | https://huggingface.co/tencent/OmniEVIE-4B | https://x.com/paperswithcodee/status/2125530235802100031 | [#94](https://github.com/donvito/notebooks/pull/94) | 2026-11-26 |
