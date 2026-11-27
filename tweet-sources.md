@@ -15,6 +15,7 @@ New notebook PRs **must append a row here**. If a tweet or Hub link is unknown, 
 
 | Notebook | Model | Hugging Face | Tweet source | PR | Shipped (SGT) |
 | --- | --- | --- | --- | --- | --- |
+| [GigaAM-v4-multilingual-asr.ipynb](colab/GigaAM-v4-multilingual-asr.ipynb) | GigaAM-v4 + Multilingual-v2 | https://huggingface.co/ai-sage/GigaAM-v4 | https://x.com/aitrackerbot/status/2126228109972156712 | [#96](https://github.com/donvito/notebooks/pull/96) | 2026-11-28 |
 | [OCRia-1-document-parsing.ipynb](colab/OCRia-1-document-parsing.ipynb) | OCRia-1 | https://huggingface.co/llamaindex/OCRia-1 | https://x.com/llama_index/status/2125315040723062872 | [#95](https://github.com/donvito/notebooks/pull/95) | 2026-11-27 |
 | [OmniEVIE-4B-multimodal-retrieval.ipynb](colab/OmniEVIE-4B-multimodal-retrieval.ipynb) | OmniEVIE-4B | https://huggingface.co/tencent/OmniEVIE-4B | https://x.com/paperswithcodee/status/2125530235802100031 | [#94](https://github.com/donvito/notebooks/pull/94) | 2026-11-26 |
 | [WePocketModel-4B-embed-vqa-decisions.ipynb](colab/WePocketModel-4B-embed-vqa-decisions.ipynb) | WePocketModel 1.0 4B | https://huggingface.co/tencent/WePocketModel1.0-4B | https://x.com/TencentAI_News/status/2125152448218034505 | [#93](https://github.com/donvito/notebooks/pull/93) | 2026-11-25 |
